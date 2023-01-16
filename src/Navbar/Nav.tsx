@@ -43,16 +43,16 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <button
-                  className="btn btn-danger"
+                <Link
+                  to="/register"
+                  className="nav-link text-danger mx-4"
                   onClick={() => {
                     localStorage.removeItem("token");
-                    localStorage.removeItem("userID");
-                    navigate("/login");
+                    localStorage.removeItem("userID");  
                   }}
                 >
                   Logout
-                </button>
+                </Link>
               </li>
             </ul>
           )}
