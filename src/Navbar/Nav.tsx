@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <div className="navbar shadow navbar-expand-lg justify-content-between bg-transparent px-5">
       <div className="navbar-brand">
-        <div className="text-black">Social Media App</div>
+        <div className="text-primary">Social Media App</div>
       </div>
       <div>
         <button
