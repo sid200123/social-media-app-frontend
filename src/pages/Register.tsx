@@ -35,7 +35,7 @@ const Register = () => {
   };
   return (
     <div className="container d-flex justify-content-center align-items-center h-100">
-      <div className="card text-white mb-5 w-50 bg-transparent shadow border-0">
+      <div className="card text-black mb-5 w-50 bg-transparent shadow border-0">
         <div className="card-header border-0">
           <div className="card-title text-center display-6">Register Form</div>
         </div>

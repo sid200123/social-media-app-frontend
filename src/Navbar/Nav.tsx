@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <div className="navbar shadow navbar-expand-lg justify-content-between bg-transparent px-5">
       <div className="navbar-brand">
-        <div className="text-white">Social Media App</div>
+        <div className="text-black">Social Media App</div>
       </div>
       <div>
         <button
@@ -25,12 +25,12 @@ const Nav = () => {
           {!localStorage.getItem("token") ? (
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="nav-link text-white" to="register">
+                <Link className="nav-link text-black" to="register">
                   Register
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="login">
+                <Link className="nav-link text-black" to="login">
                   Login
                 </Link>
               </li>
@@ -38,7 +38,7 @@ const Nav = () => {
           ) : (
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/">
+                <Link className="nav-link text-black" to="/">
                   Home
                 </Link>
               </li>
@@ -48,7 +48,7 @@ const Nav = () => {
                   className="nav-link text-danger mx-4"
                   onClick={() => {
                     localStorage.removeItem("token");
-                    localStorage.removeItem("userID");  
+                    localStorage.removeItem("userID");
                   }}
                 >
                   Logout

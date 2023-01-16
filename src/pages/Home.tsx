@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <div className="p-1 overflow-scroll h-100">
+    <div className="overflow-scroll h-100">
       <div>
         <Carousel fade>
           <Carousel.Item style={{ height: "92vh" }}>
@@ -52,7 +52,7 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-      <div>
+      <div className="container">
         <div
           className="card my-5 w-50 p-5 shadow"
           style={{ borderRadius: "20% 30%" }}
@@ -64,7 +64,7 @@ const Home = () => {
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
                     className="d-block w-100 rounded"
-                    src={"imgs/fourth.jpg"}
+                    src={"imgs/first.jpg"}
                     alt="fourth"
                   />
                 </div>
@@ -74,7 +74,7 @@ const Home = () => {
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
                     className="d-block w-100 rounded"
-                    src={"imgs/fourth.jpg"}
+                    src={"imgs/third.jpg"}
                     alt="fourth"
                   />
                 </div>
@@ -84,7 +84,7 @@ const Home = () => {
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
                     className="d-block w-100 rounded"
-                    src={"imgs/fourth.jpg"}
+                    src={"imgs/second.jpg"}
                     alt="fourth"
                   />
                 </div>
@@ -94,7 +94,7 @@ const Home = () => {
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
                     className="d-block w-100 rounded"
-                    src={"imgs/fourth.jpg"}
+                    src={"imgs/first.jpg"}
                     alt="fourth"
                   />
                 </div>
@@ -103,7 +103,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="d-flex justify-content-end">
+      <div className="d-flex container justify-content-end">
         <div
           className="card shadow my-2 w-50 shadow p-5"
           style={{ borderRadius: "30% 20%" }}
@@ -115,7 +115,7 @@ const Home = () => {
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
                     className="d-block w-100 rounded"
-                    src={"imgs/fourth.jpg"}
+                    src={"imgs/third.jpg"}
                     alt="fourth"
                   />
                 </div>
@@ -125,7 +125,7 @@ const Home = () => {
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
                     className="d-block w-100 rounded"
-                    src={"imgs/fourth.jpg"}
+                    src={"imgs/second.jpg"}
                     alt="fourth"
                   />
                 </div>
@@ -135,7 +135,7 @@ const Home = () => {
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
                     className="d-block w-100 rounded"
-                    src={"imgs/fourth.jpg"}
+                    src={"imgs/first.jpg"}
                     alt="fourth"
                   />
                 </div>
@@ -145,7 +145,7 @@ const Home = () => {
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
                     className="d-block w-100 rounded"
-                    src={"imgs/fourth.jpg"}
+                    src={"imgs/third.jpg"}
                     alt="fourth"
                   />
                 </div>
@@ -154,7 +154,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="d-flex justify-content-end">
+      <div className="d-flex container justify-content-end">
         <div className="card my-5 w-100 p-5 bordered">
           <div className="card-body">
             <div className="row">
@@ -163,7 +163,7 @@ const Home = () => {
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
                     className="d-block w-100 rounded"
-                    src={"imgs/second.jpg"}
+                    src={"imgs/fourth.jpg"}
                     alt="fourth"
                   />
                 </div>
@@ -176,7 +176,7 @@ const Home = () => {
                         <img
                           style={{ height: "100%", backgroundSize: "cover" }}
                           className="d-block w-100 rounded"
-                          src={"imgs/fourth.jpg"}
+                          src={"imgs/first.jpg"}
                           alt="fourth"
                         />
                       </div>
@@ -186,7 +186,7 @@ const Home = () => {
                         <img
                           style={{ height: "100%", backgroundSize: "cover" }}
                           className="d-block w-100 rounded"
-                          src={"imgs/fourth.jpg"}
+                          src={"imgs/second.jpg"}
                           alt="fourth"
                         />
                       </div>
@@ -196,7 +196,7 @@ const Home = () => {
                         <img
                           style={{ height: "100%", backgroundSize: "cover" }}
                           className="d-block w-100 rounded"
-                          src={"imgs/fourth.jpg"}
+                          src={"imgs/third.jpg"}
                           alt="fourth"
                         />
                       </div>
@@ -206,7 +206,7 @@ const Home = () => {
                         <img
                           style={{ height: "100%", backgroundSize: "cover" }}
                           className="d-block w-100 rounded"
-                          src={"imgs/fourth.jpg"}
+                          src={"imgs/first.jpg"}
                           alt="fourth"
                         />
                       </div>
@@ -216,7 +216,7 @@ const Home = () => {
                         <img
                           style={{ height: "100%", backgroundSize: "cover" }}
                           className="d-block w-100 rounded"
-                          src={"imgs/fourth.jpg"}
+                          src={"imgs/second.jpg"}
                           alt="fourth"
                         />
                       </div>
@@ -226,7 +226,7 @@ const Home = () => {
                         <img
                           style={{ height: "100%", backgroundSize: "cover" }}
                           className="d-block w-100 rounded"
-                          src={"imgs/fourth.jpg"}
+                          src={"imgs/third.jpg"}
                           alt="fourth"
                         />
                       </div>
