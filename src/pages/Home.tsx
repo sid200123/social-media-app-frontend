@@ -54,7 +54,7 @@ const Home = () => {
       </div>
       <div className="container">
         <div
-          className="card my-5 w-50 p-5 shadow"
+          className="card my-5 w-50 p-5 shadow border-primary"
           style={{ borderRadius: "20% 30%" }}
         >
           <div className="card-body">
@@ -105,7 +105,7 @@ const Home = () => {
       </div>
       <div className="d-flex container justify-content-end">
         <div
-          className="card shadow my-2 w-50 shadow p-5"
+          className="card shadow border-success my-2 w-50 shadow p-5"
           style={{ borderRadius: "30% 20%" }}
         >
           <div className="card-body">
@@ -155,7 +155,7 @@ const Home = () => {
         </div>
       </div>
       <div className="d-flex container justify-content-end">
-        <div className="card my-5 w-100 p-5 bordered">
+        <div className="card border-dark my-5 w-100 p-5 bordered">
           <div className="card-body">
             <div className="row">
               <div className="col-lg-6">
