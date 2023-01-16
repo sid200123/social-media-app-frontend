@@ -1,9 +1,7 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="navbar shadow navbar-expand-lg justify-content-between bg-transparent px-5">
       <div className="navbar-brand">

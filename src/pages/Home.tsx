@@ -10,7 +10,7 @@ const Home = () => {
             <img
               style={{ height: "100%", backgroundSize: "cover" }}
               className="d-block w-100 rounded"
-              src={"imgs/first.jpg"}
+              src={"imgs/third.jpg"}
               alt="first"
             />
             <Carousel.Caption>
