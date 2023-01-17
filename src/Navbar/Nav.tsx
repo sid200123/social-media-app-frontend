@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Nav = () => {
+  const navigate = useNavigate();
   return (
     <div className="navbar shadow navbar-expand-lg justify-content-between bg-transparent px-5">
       <div className="navbar-brand">
@@ -41,12 +42,17 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link text-black" to="/memories">
+                  Memories
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link
-                  to="/register"
-                  className="nav-link text-danger mx-4"
+                  to="/login"
+                  className="nav-link text-danger"
                   onClick={() => {
                     localStorage.removeItem("token");
-                    localStorage.removeItem("userID");
+                    localStorage.removeItem("userId");
                   }}
                 >
                   Logout
