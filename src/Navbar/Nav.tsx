@@ -51,8 +51,7 @@ const Nav = () => {
                   to="/login"
                   className="nav-link text-danger"
                   onClick={() => {
-                    localStorage.removeItem("token");
-                    localStorage.removeItem("userId");
+                    localStorage.clear();
                   }}
                 >
                   Logout
