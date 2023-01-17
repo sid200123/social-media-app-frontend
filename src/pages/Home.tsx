@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -155,10 +156,13 @@ const Home = () => {
         </div>
       </div>
       <div className="d-flex container justify-content-end">
-        <div className="card border-dark my-5 w-100 p-5 bordered">
+        <div className="card border-primary my-4 w-100 p-4 bordered">
+          <div className="card-header text-center text-warning fw-bold fs-2 border-0">
+            Photos
+          </div>
           <div className="card-body">
-            <div className="row">
-              <div className="col-lg-6">
+            <div className="row border border-warning rounded p-4">
+              <div className="col-lg-6 border-right border-warning">
                 <div className="h-100">
                   <img
                     style={{ height: "100%", backgroundSize: "cover" }}
@@ -237,6 +241,9 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
