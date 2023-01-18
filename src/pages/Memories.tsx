@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Memories = () => {
+  const [title, setTitle] = useState<string>("");
+  const [detail, setDetail] = useState<string>("");
+  const [fileData, setFileData] = useState<File | null>();
+  const [fileName, setFileName] = useState<string>("");
+  console.log(fileData);
+  console.log(fileName);
   return (
     <div>
       <div className="row px-3">
@@ -16,6 +22,7 @@ const Memories = () => {
                   />
                 </div>
                 <div className="card-body">
+                  <p className="card-title fw-bold fs-5">Title</p>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Magnam illum explicabo ipsa, necessitatibus ducimus
@@ -124,7 +131,7 @@ const Memories = () => {
         </div>
         <div
           className="col-lg-4 d-flex justify-content-center align-items-center"
-          style={{ backgroundColor:"lightseagreen" }}
+          style={{ backgroundColor: "lightseagreen" }}
         >
           <form className="form shadow p-4">
             <div className="text-center mb-4">
@@ -132,15 +139,39 @@ const Memories = () => {
             </div>
             <div className="form-group">
               <label>Title</label>
-              <input type="text" className="form-control" />
+              <input
+                type="text"
+                name="title"
+                value={title}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setTitle(e.target.value);
+                }}
+                className="form-control"
+              />
             </div>
             <div className="form-group">
               <label>Image</label>
-              <input type="file" className="form-control" />
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  if (!e.target.files) return;
+                  setFileData(e.target.files[0]);
+                  setFileName(e.target.files[0].name);
+                }}
+                className="form-control"
+              />
             </div>
             <div className="form-group">
               <label>Detail</label>
-              <textarea className="form-control" />
+              <input
+                type="text"
+                value={detail}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setDetail(e.target.value);
+                }}
+                className="form-control"
+              />
             </div>
             <div className="text-center">
               <button type="submit" className="btn btn-success">

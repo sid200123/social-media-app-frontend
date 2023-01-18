@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import swal from "sweetalert";
 
 interface Data {
   name: string;
@@ -23,13 +24,16 @@ const Register = () => {
     e.preventDefault();
     console.log("register data");
     await axios.post("http://localhost:5000/register", data).then((result) => {
+      console.log(result.data.result);
       if (result.data.auth) {
         localStorage.setItem("token", result.data.auth);
-        localStorage.setItem("userId", email);
         setName("");
         setEmail("");
         setPassword("");
         setConfirmPassword("");
+      }
+      if (result.data.err) {
+        swal("Error", `Email Already Registered`, "error");
       }
     });
   };
