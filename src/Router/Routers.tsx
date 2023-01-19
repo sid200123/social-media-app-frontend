@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import ImgToUrl from "../component/ImgToUrl";
 import Chat from "../pages/Chat";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
@@ -15,6 +16,7 @@ const Routers: React.FC = () => {
       <Route path="memories" element={<Memories />} />
       <Route path="searchUser" element={<SearchUser />} />
       <Route path="chat" element={<Chat />} />
+      <Route path="imgtourl" element={<ImgToUrl />} />
       {!localStorage.getItem("token") && (
         <Route path="login" element={<Login />} />
       )}

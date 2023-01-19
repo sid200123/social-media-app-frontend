@@ -3,9 +3,13 @@ import { MdAdd } from "react-icons/md";
 
 interface Props {
   name: string;
+  userId: string;
 }
 
-const UserData = ({ name }: Props) => {
+const UserData = ({ name, userId }: Props) => {
+  const currentUserId: string | null = localStorage.getItem("userId");
+  const getUserId: string | null = userId;
+  console.log("current", currentUserId, "getid", getUserId);
   return (
     <div className="bg-light mt-3 shadow rounded">
       <div className="d-flex justify-content-between align-items-center">
@@ -24,9 +28,11 @@ const UserData = ({ name }: Props) => {
           </div>
         </div>
         <div>
-          <button className="btn btn-transparent mr-3">
-            <MdAdd />
-          </button>
+          {getUserId !== currentUserId && (
+            <button className="btn btn-transparent mr-3">
+              <MdAdd />
+            </button>
+          )}
         </div>
       </div>
     </div>

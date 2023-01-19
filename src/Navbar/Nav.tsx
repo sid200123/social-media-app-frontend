@@ -47,6 +47,11 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link text-black" to="/imgtourl">
+                  ImgConvert
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link text-black" to="/searchUser">
                   Search
                 </Link>

@@ -171,8 +171,7 @@ const Home = () => {
                     alt="fourth"
                   />
                 </div>
-              <
-                /div>
+              </div>
               <div className="col-lg-6 h-100">
                 <div className="h-100">
                   <div className="row h-100">

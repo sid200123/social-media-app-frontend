@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { MdSearch } from "react-icons/md";
 import UserData from "../component/UserData";
 
 const SearchUser = () => {
@@ -30,7 +29,7 @@ const SearchUser = () => {
       </div>
       <div className="mt-3">
         {searchData.map((user: any) => (
-          <UserData name={user.name} key={user.id} />
+          <UserData name={user.name} key={user.id} userId={user.email} />
         ))}
       </div>
     </div>
