@@ -20,7 +20,6 @@ const Login = () => {
 
   const loginData = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("register data");
     await axios.post("http://localhost:5000/login", data).then((result) => {
       if (result.data.auth) {
         localStorage.setItem("token", result.data.auth);

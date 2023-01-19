@@ -47,11 +47,22 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link text-black" to="/searchUser">
+                  Search
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-black" to="/chat">
+                  Chat
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link
                   to="/login"
                   className="nav-link text-danger"
                   onClick={() => {
                     localStorage.clear();
+                    navigate("/login");
                   }}
                 >
                   Logout

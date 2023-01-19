@@ -13,12 +13,43 @@ const Register = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [validateemail, setValidateEmail] = useState<boolean>(false);
+  const [validatepassword, setValidatePassword] = useState<boolean>(false);
+  const [validateMatchPassword, setValidateMatchPassword] = useState<boolean>(false);
+
+  const emailValidate: RegExp = new RegExp(
+    "^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$"
+  );
+
+  const passwordValidate: RegExp = new RegExp(
+    "^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$"
+  );
 
   const data: Data = {
     name: name,
     email: email,
     password: password,
   };
+
+  // const validate = (e: any) => {
+  //   e.preventDefault();
+  //   if (password === confirmPassword) {
+  //     setValidateMatchPassword(true);
+  //   } else {
+  //     setValidateMatchPassword(false);
+  //   }
+  //   if (emailValidate.test(email)) {
+  //     setValidateEmail(true);
+  //   } else {
+  //     setValidateEmail(false);
+  //   }
+  //   }
+  //   if (passwordValidate.test(password)) {
+  //     setValidatePassword(true);
+  //   } else {
+  //     setValidatePassword(false);
+  //   }
+  // };
 
   const registerData = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,19 +89,17 @@ const Register = () => {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                required
                 placeholder="Enter Your Name"
               />
             </div>
             <div className="form-group my-3">
               <label htmlFor="email">Email</label>
               <input
-                type="email"
+                type="text"
                 className="form-control"
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required
                 placeholder="Enter Your Email"
               />
             </div>
@@ -82,7 +111,6 @@ const Register = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
                 placeholder="Enter Your Password"
               />
             </div>
@@ -94,7 +122,6 @@ const Register = () => {
                 id="confirm_password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                required
                 placeholder="Enter Your Confirm Password"
               />
             </div>
@@ -102,6 +129,9 @@ const Register = () => {
               <button type="submit" className="btn btn-success my-4">
                 Register
               </button>
+              {/* <button onClick={validate} className="btn btn-success my-4">
+                Validate
+              </button> */}
             </div>
           </form>
         </div>

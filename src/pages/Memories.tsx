@@ -174,7 +174,7 @@ const Memories = () => {
               />
             </div>
             <div className="text-center">
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn btn-outline-primary">
                 Submit
               </button>
             </div>
