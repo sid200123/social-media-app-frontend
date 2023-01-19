@@ -38,7 +38,7 @@ const ImgToUrl = () => {
         </div>
         <div className="mt-3">
           <h1>Img Url</h1>
-            <a href={imgFile}>Img Url</a>
+          <a href={imgFile}>Img Url</a>
         </div>
       </div>
     </div>
