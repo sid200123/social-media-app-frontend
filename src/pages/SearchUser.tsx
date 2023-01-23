@@ -27,7 +27,7 @@ const SearchUser = () => {
           }}
         />
       </div>
-      <div className="mt-3">
+      <div className="mt-3 overflow-scroll" style={{ height: "81vh" }}>
         {searchData.map((user: any) => (
           <UserData name={user.name} key={user.id} userId={user.email} />
         ))}
