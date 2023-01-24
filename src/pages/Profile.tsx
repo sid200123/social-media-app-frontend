@@ -19,12 +19,7 @@ const Profile = () => {
   const [img, setImg] = useState<string>();
   const [file, setFile] = useState<File>();
   const navigate = useNavigate();
-  useEffect(() => {
-    const userID = localStorage.getItem("userId");
-    axios.get(`http://localhost:5000/profileDetail/${userID}`).then((res) => {
-      setProfileDetail(res.data);
-    });
-  }, []);
+
   const onSave = () => {
     const userID = localStorage.getItem("userId");
     const data = {
@@ -32,6 +27,7 @@ const Profile = () => {
       name: name,
       address: address,
       profile: img,
+      image: file,
     };
     axios.put("http://localhost:5000/updateProfile", data).then((res) => {
       console.log(res.data);
@@ -51,6 +47,13 @@ const Profile = () => {
 
     reader.readAsDataURL(file);
   };
+
+  useEffect(() => {
+    const userID = localStorage.getItem("userId");
+    axios.get(`http://localhost:5000/profileDetail/${userID}`).then((res) => {
+      setProfileDetail(res.data);
+    });
+  }, [update]);
   return (
     <div className="container d-flex justify-content-center align-items-center h-100 w-100">
       {profileDetail.map((val: ProfileDetail, index: number) => {
@@ -104,13 +107,14 @@ const Profile = () => {
             </div>
 
             <div className="container mt-5">
-              <div className="text-group row">
+              <div className="text-group mt-2 row">
                 <label className="fw-bold w-25 fs-5">Name: </label>
                 {update ? (
                   <input
                     type="text"
                     name="name"
                     className="form-control w-75"
+                    required
                     value={name}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       setName(e.target.value)
@@ -120,11 +124,15 @@ const Profile = () => {
                   <span className="fs-6 w-75">{val.name}</span>
                 )}
               </div>
-              <div className="text-group">
-                <label className="fw-bold w-25 fs-5">Email: </label>
-                <span className="fs-6 w-75">{val.email}</span>
+              <div className="text-group mt-2 row">
+                {update ? null : (
+                  <div>
+                    <label className="fw-bold w-25 fs-5">Email: </label>
+                    <span className="fs-6 w-75 text-muted"> {val.email}</span>
+                  </div>
+                )}
               </div>
-              <div className="text-group row">
+              <div className="text-group mt-2 row">
                 <label className="fw-bold fs-5 w-25">Address: </label>
                 {update ? (
                   <input
