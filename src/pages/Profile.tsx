@@ -18,7 +18,6 @@ const Profile = () => {
   const [address, setAddress] = useState<string>("");
   const [img, setImg] = useState<string>();
   const [file, setFile] = useState<File>();
-  const navigate = useNavigate();
 
   const onSave = () => {
     const userID = localStorage.getItem("userId");
