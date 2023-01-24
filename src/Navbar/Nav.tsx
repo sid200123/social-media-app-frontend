@@ -62,6 +62,11 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link text-black" to="/profile">
+                  Profile
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link
                   to="/login"
                   className="nav-link text-danger"

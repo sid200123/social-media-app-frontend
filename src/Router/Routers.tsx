@@ -6,6 +6,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Memories from "../pages/Memories";
+import Profile from "../pages/Profile";
 import Register from "../pages/Register";
 import SearchUser from "../pages/SearchUser";
 
@@ -16,6 +17,7 @@ const Routers: React.FC = () => {
       <Route path="memories" element={<Memories />} />
       <Route path="searchUser" element={<SearchUser />} />
       <Route path="chat" element={<Chat />} />
+      <Route path="profile" element={<Profile />} />
       <Route path="imgtourl" element={<ImgToUrl />} />
       {!localStorage.getItem("token") && (
         <Route path="login" element={<Login />} />
