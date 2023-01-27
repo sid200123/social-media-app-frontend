@@ -39,8 +39,8 @@ const Profile = () => {
 
     await axios.put("http://localhost:5000/updateProfile", data).then((res) => {
       console.log(res.data);
+      setUpdate(!update);
     });
-    setUpdate(!update);
 
     return false;
   };
