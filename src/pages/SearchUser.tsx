@@ -7,10 +7,12 @@ const SearchUser = () => {
   const [searchData, setSearchData] = useState<[]>([]);
   useEffect(() => {
     if (search.length > 0) {
-      axios.get(`http://localhost:5000/searchData/${search}`).then((res) => {
-        console.log(res.data);
-        setSearchData(res.data);
-      });
+      axios
+        .get(`http://localhost:5000/data/searchData/${search}`)
+        .then((res) => {
+          console.log(res.data);
+          setSearchData(res.data);
+        });
     } else {
       setSearchData([]);
     }

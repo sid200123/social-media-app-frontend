@@ -1,10 +1,24 @@
 import React from "react";
+import {
+  AiFillHome,
+  AiFillProfile,
+  AiOutlineHome,
+  AiOutlinePoweroff,
+  AiOutlineSearch,
+  AiOutlineUser,
+} from "react-icons/ai";
+import {
+  MdAddCircleOutline,
+  MdChatBubbleOutline,
+  MdHome,
+  MdMusicVideo,
+} from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const navigate = useNavigate();
   return (
-    <div className="navbar shadow navbar-expand-lg justify-content-between bg-transparent px-5">
+    <div className="navbar shadow navbar-expand-lg justify-content-between bg-transparent px-lg-5">
       <div className="navbar-brand">
         <div className="text-primary">Social Media App</div>
       </div>
@@ -38,32 +52,32 @@ const Nav = () => {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/">
-                  Home
+                  <AiOutlineHome className="fs-6" />
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-black" to="/addPost">
+                  <MdAddCircleOutline className="fs-6" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/memories">
-                  Memories
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-black" to="/imgtourl">
-                  ImgConvert
+                  <MdMusicVideo className="fs-6" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/searchUser">
-                  Search
+                  <AiOutlineSearch className="fs-6" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/chat">
-                  Chat
+                  <MdChatBubbleOutline className="fs-6" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/profile">
-                  Profile
+                  <AiOutlineUser className="fs-6" />
                 </Link>
               </li>
               <li className="nav-item">
@@ -75,7 +89,7 @@ const Nav = () => {
                     navigate("/login");
                   }}
                 >
-                  Logout
+                  <AiOutlinePoweroff className="fs-6" />
                 </Link>
               </li>
             </ul>

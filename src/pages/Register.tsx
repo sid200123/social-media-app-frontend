@@ -15,7 +15,8 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [validateemail, setValidateEmail] = useState<boolean>(false);
   const [validatepassword, setValidatePassword] = useState<boolean>(false);
-  const [validateMatchPassword, setValidateMatchPassword] = useState<boolean>(false);
+  const [validateMatchPassword, setValidateMatchPassword] =
+    useState<boolean>(false);
 
   const emailValidate: RegExp = new RegExp(
     "^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$"
@@ -54,19 +55,21 @@ const Register = () => {
   const registerData = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("register data");
-    await axios.post("http://localhost:5000/register", data).then((result) => {
-      console.log(result.data.result);
-      if (result.data.auth) {
-        localStorage.setItem("token", result.data.auth);
-        setName("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-      }
-      if (result.data.err) {
-        swal("Error", `Email Already Registered`, "error");
-      }
-    });
+    await axios
+      .post("http://localhost:5000/data/register", data)
+      .then((result) => {
+        console.log(result.data.result);
+        if (result.data.auth) {
+          localStorage.setItem("token", result.data.auth);
+          setName("");
+          setEmail("");
+          setPassword("");
+          setConfirmPassword("");
+        }
+        if (result.data.err) {
+          swal("Error", `Email Already Registered`, "error");
+        }
+      });
   };
   return (
     <div className="container d-flex justify-content-center align-items-center h-100">

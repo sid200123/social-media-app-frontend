@@ -10,7 +10,7 @@ const Home = () => {
           <Carousel.Item style={{ height: "92vh" }}>
             <img
               style={{ height: "100%", backgroundSize: "cover" }}
-              className="d-block w-100 rounded"
+              className="d-block w-100"
               src={"imgs/third.jpg"}
               alt="first"
             />
@@ -21,7 +21,7 @@ const Home = () => {
           <Carousel.Item style={{ height: "92vh" }}>
             <img
               style={{ height: "100%", backgroundSize: "cover" }}
-              className="d-block w-100 rounded"
+              className="d-block w-100"
               src={"imgs/second.jpg"}
               alt="second"
             />
@@ -32,7 +32,7 @@ const Home = () => {
           <Carousel.Item style={{ height: "92vh" }}>
             <img
               style={{ height: "100%", backgroundSize: "cover" }}
-              className="d-block w-100 rounded"
+              className="d-block w-100"
               src={"imgs/third.jpg"}
               alt="Third"
             />
@@ -43,7 +43,7 @@ const Home = () => {
           <Carousel.Item style={{ height: "92vh" }}>
             <img
               style={{ height: "100%", backgroundSize: "cover" }}
-              className="d-block w-100 rounded"
+              className="d-block w-100"
               src={"imgs/fourth.jpg"}
               alt="fourth"
             />

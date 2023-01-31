@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface ProfileDetail {
   address: string;
@@ -16,12 +15,13 @@ const Profile = () => {
   const [update, setUpdate] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
   const [address, setAddress] = useState<string>("");
-  const [img, setImg] = useState<string | any>();
+  const [img, setImg] = useState<string>("");
   const [file, setFile] = useState<File | any>();
 
   const onSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    const userID: number | any = localStorage.getItem("userId");
+    console.log("typeeeeeeee", typeof localStorage.getItem("userId"));
+    const userID: string = localStorage.getItem("userId")!;
     const data = {
       id: userID,
       name: name,
@@ -36,19 +36,24 @@ const Profile = () => {
     // data.append("address", address);
     // data.append("profile", img);
     // data.append("image", file);
+    // console.log("data", data);
 
-    await axios.put("http://localhost:5000/updateProfile", data).then((res) => {
-      console.log(res.data);
-      setUpdate(!update);
-    });
+    await axios
+      .put("http://localhost:5000/data/updateProfile", data)
+      .then((res) => {
+        console.log(res.data);
+        setUpdate(!update);
+      });
 
     return false;
   };
   useEffect(() => {
     const userID = localStorage.getItem("userId");
-    axios.get(`http://localhost:5000/profileDetail/${userID}`).then((res) => {
-      setProfileDetail(res.data);
-    });
+    axios
+      .get(`http://localhost:5000/data/profileDetail/${userID}`)
+      .then((res) => {
+        setProfileDetail(res.data);
+      });
   }, [update]);
   return (
     <div className="container d-flex justify-content-center align-items-center h-100 w-100">
@@ -124,7 +129,7 @@ const Profile = () => {
               <div key={index} className="w-50">
                 <form onSubmit={onSave} encType="multipart/form-data">
                   <div className="d-flex-column justify-content-center">
-                    <div className="text-center">
+                    <div className="text-center form-group">
                       {val.profile === "" ? (
                         <img
                           className="cover rounded img-fluid w-25"
@@ -134,17 +139,20 @@ const Profile = () => {
                       ) : (
                         <img
                           className="cover rounded img-fluid w-25"
-                          src={`${val.profile}`}
+                          src={`${img}`}
                           alt="card-img"
                         />
                       )}
                     </div>
-                    <div className="form-group">
+                    <div className="form-group mt-2 row">
+                      <label className="fw-bold w-25 fs-5">
+                        Select Image:{" "}
+                      </label>
                       <input
                         type="file"
                         id="my_file"
                         name="image"
-                        className="invisible"
+                        className="w-75"
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           e.preventDefault();
 
@@ -153,24 +161,13 @@ const Profile = () => {
                           const reader = new FileReader();
                           setFile(file);
 
-                          reader.onload = () => {
-                            setImg(reader.result?.toString());
+                          reader.onload = (event: any) => {
+                            console.log("event", event.target.result);
+                            setImg(event.target.result);
                           };
-
                           reader.readAsDataURL(file);
                         }}
                       />
-                      <button
-                        className="btn btn-transparent border border-dark rounded-circle"
-                        style={{
-                          margin: "-10% -0% 0% 3%",
-                        }}
-                        onClick={() => {
-                          document.getElementById("my_file")?.click();
-                        }}
-                      >
-                        +
-                      </button>
                     </div>
                     <div className="form-group mt-2 row">
                       <label className="fw-bold w-25 fs-5">Name: </label>
@@ -197,7 +194,7 @@ const Profile = () => {
                         }
                       />
                     </div>
-                    <div className="form-start">
+                    <div className="form-group">
                       <button
                         className="btn btn-secondary btn-sm my-4"
                         type="submit"

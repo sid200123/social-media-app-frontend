@@ -20,16 +20,18 @@ const Login = () => {
 
   const loginData = async (e: React.FormEvent) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/login", data).then((result) => {
-      if (result.data.auth) {
-        localStorage.setItem("userId", result.data.data[0].id);
-        localStorage.setItem("token", result.data.auth);
-        console.log(result.data);
-        setEmail("");
-        setPassword("");
-        navigate("/");
-      }
-    });
+    await axios
+      .post("http://localhost:5000/data/login", data)
+      .then((result) => {
+        if (result.data.auth) {
+          localStorage.setItem("userId", result.data.data[0].id);
+          localStorage.setItem("token", result.data.auth);
+          console.log(result.data);
+          setEmail("");
+          setPassword("");
+          navigate("/");
+        }
+      });
   };
 
   return (
