@@ -7,15 +7,25 @@ import {
   AiOutlineMore,
   AiOutlineShareAlt,
 } from "react-icons/ai";
-
+// const userID = localStorage.getItem("userId");
 const Memories = () => {
-  const [postData, setPostData] = useState<[]>([]); 
+  const [postData, setPostData] = useState<[]>([]);
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/post/getPost")
-      .then((res) => setPostData(res.data.result));
+    const userID = localStorage.getItem("userId");
+    axios.get("http://localhost:5000/post/getPost").then((res) => {
+      setPostData(res.data.result);
+      console.log(res.data.result);
+      const dataDetail = JSON.parse(res.data.result[0].likes);
+      const convertData = dataDetail.dataId;
+      console.log(convertData);
+      convertData.map((val: any) => {
+        return console.log(val);
+      });
+      console.log("userID", userID);
+      console.log(convertData.includes(Number(userID)));
+    });
   }, []);
-  console.log(postData);
+  // console.log(postData);
   return (
     <div>
       <div className="row px-3">

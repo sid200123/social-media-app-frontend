@@ -20,7 +20,7 @@ const Nav = () => {
   return (
     <div className="navbar shadow navbar-expand-lg justify-content-between bg-transparent px-lg-5">
       <div className="navbar-brand">
-        <div className="text-primary">Social Media App</div>
+        <div className="text-dark fs-3 text-uppercase">Test</div>
       </div>
       <div>
         <button
@@ -49,35 +49,35 @@ const Nav = () => {
               </li>
             </ul>
           ) : (
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav mr-auto d-flex align-items-center">
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/">
-                  <AiOutlineHome className="fs-6" />
+                  <AiOutlineHome className="fs-2 text-warning" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/addPost">
-                  <MdAddCircleOutline className="fs-6" />
+                  <MdAddCircleOutline className="fs-2 text-warning" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/memories">
-                  <MdMusicVideo className="fs-6" />
+                  <MdMusicVideo className="fs-2 text-warning" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/searchUser">
-                  <AiOutlineSearch className="fs-6" />
+                  <AiOutlineSearch className="fs-2 text-warning" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/chat">
-                  <MdChatBubbleOutline className="fs-6" />
+                  <MdChatBubbleOutline className="fs-2 text-warning" />
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-black" to="/profile">
-                  <AiOutlineUser className="fs-6" />
+                  <AiOutlineUser className="fs-2 text-warning" />
                 </Link>
               </li>
               <li className="nav-item">
@@ -89,7 +89,7 @@ const Nav = () => {
                     navigate("/login");
                   }}
                 >
-                  <AiOutlinePoweroff className="fs-6" />
+                  <AiOutlinePoweroff className="fs-2 text-danger" />
                 </Link>
               </li>
             </ul>
